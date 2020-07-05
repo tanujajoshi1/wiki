@@ -11,21 +11,22 @@
     <body>
         <div class="row">
             <div class="sidebar col-lg-2 col-md-3">
-                <h2>Wiki</h2>
+                <h2 style="font-family: Times New Roman" >Wiki</h2>
                 <form method="POST" action="{%url 'search'%}" name=form>
                     {% csrf_token %}
                     
                     <input  type="text" name="search" placeholder="Search Encyclopedia">
-                    <button type=submit name="submit">Search</button>
+                    <button type="submit" name=submit class="btn btn-primary btn-sm" style="margin-left: 30%;margin-top: 2% ">Search</button>
                 </form>
                 <div>
+                 
                     <a href="{% url 'index' %}">Home</a>
                 </div>
                 <div>
-                    Create New Page
+                    <a href="{% url 'createPage' %}">Create New Page</a>
                 </div>
                 <div>
-                    Random Page
+                   <a href="{% url 'randomPage' %}"> Random Page </a>
                 </div>
                 {% block nav %}
                 {% endblock %}

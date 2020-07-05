@@ -5,13 +5,16 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Search Results</h1>
+    <h3 >Search Results</h3>
 
     <ul>
         {% for entry in entries%}
             <li><a href="{%url 'showHTML' entry %}">{{entry|safe}}</a></li>
             {% empty%}
-            No result found
+            <div class="alert alert-danger col-md-4" role="alert">
+             No results found :(
+			</div>
+            
 
         {% endfor %}
     </ul>
