@@ -34,7 +34,7 @@ def search(request):
 		page=util.get_entry(name)
 		markdowner=Markdown()
 		if name in entries:
-			return HttpResponse(markdowner.convert(page))
+			return HttpResponse(markdowner.convert(page)+'  <button style="padding:10px 18px; border-radius:4px;color:blue;background-color:blue "><a style="color:white;font-size:17px;" href="edit/'+name+'">Edit Page</a></button>   ')
 	    
 		res=[i for i in entries if name in i]
 		if res is not None:	
